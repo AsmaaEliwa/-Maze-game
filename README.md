@@ -31,7 +31,7 @@ In {maze}, users will be able to:
 <li>Monday : the moving player element</li>
 <li>Tuesday : the music and the mute button </li>
 <li>Wednesday : the music and the traps or enemey. </li>
-<li>Thursday Morning : the css . </li>
+<li>Thursday Morning : final touches . </li>
 </ul>
 
 
