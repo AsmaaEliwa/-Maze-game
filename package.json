@@ -1,18 +1,8 @@
 {
-  "name": "-Maze-game",
+  "name": "-maze-game",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "browserslist": [
-    "defaults"
-  ],
-  "scripts": {
-    "watch": "webpack --watch --mode=development",
-    "build": "webpack --mode=production"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "description": "<h2>Background</h2> <p>in mazeGame your goal is to navigate through the  maze and reach the goal, uncovering secret passages, and evading cunning obstacles. Be prepared to encounter devious traps, and intelligent adversaries who will stop at nothing to hinder your progress. Use your wit and strategy to outsmart them and find your way to the  goal.</p>",
+  "main": "webpack.config.js",
   "dependencies": {
     "@babel/core": "^7.22.5",
     "@babel/preset-env": "^7.22.5",
@@ -25,5 +15,23 @@
     "sass-loader": "^13.3.2",
     "webpack": "^5.88.1",
     "webpack-cli": "^5.1.4"
-  }
+  },
+  "browserslist": [
+    "defaults"
+  ],
+  "scripts": {
+    "watch": "webpack --watch --mode=development",
+    "build": "webpack --mode=production"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AsmaaEliwa/-Maze-game.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AsmaaEliwa/-Maze-game/issues"
+  },
+  "homepage": "https://github.com/AsmaaEliwa/-Maze-game#index.html"
 }
