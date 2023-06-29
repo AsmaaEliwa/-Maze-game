@@ -13,4 +13,4 @@ In {maze}, users will be able to:
 
 
 <h2>Wireframes</h2>
-![Screenshot 2023-05-04 232217](https://user-images.githubusercontent.com/126521511/236371400-36e5e508-2eca-4e63-b7f2-ec9ddf9e5284.png)
+<img width="1026" alt="Screenshot 2023-06-29 at 12 12 17 PM" src="https://github.com/AsmaaEliwa/-Maze-game/assets/63536619/03553b05-5610-44d5-9f76-967daedc9d8a">
