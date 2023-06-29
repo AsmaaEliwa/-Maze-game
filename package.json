@@ -1,5 +1,5 @@
 {
-  "name": "-maze-game",
+  "name": "-Maze-game",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -10,17 +10,9 @@
     "watch": "webpack --watch --mode=development",
     "build": "webpack --mode=production"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/AsmaaEliwa/-Maze-game.git"
-  },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/AsmaaEliwa/-Maze-game/issues"
-  },
-  "homepage": "https://github.com/AsmaaEliwa/-Maze-game#readme",
   "dependencies": {
     "@babel/core": "^7.22.5",
     "@babel/preset-env": "^7.22.5",
