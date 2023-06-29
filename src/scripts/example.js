@@ -1,8 +1,6 @@
 class Example {
     constructor(ele) {
         this.ele = ele;
-       
-
     }
 
 
