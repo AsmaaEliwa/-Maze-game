@@ -1,4 +1,4 @@
-import Example from "./scripts/example"
+import Example from "./scripts/main"
 import Map from "./scripts/map"
 document.addEventListener("DOMContentLoaded", () => {
     const main = document.getElementById("main");

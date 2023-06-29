@@ -1,36 +1,40 @@
-class Map{
-    constructor(canvas){
-        this.canvas=canvas;
-        this.createMap = this.createMap.bind(this); 
+class Map {
+    constructor(canvas) {
+        this.canvas = canvas;
+        this.createMap = this.createMap.bind(this);
         this.createMap();
 
     }
 
-       createMap(){
-        //    debugger
-        if (this.canvas.getContext) {
+    createMap() {
 
-            const ctx = this.canvas.getContext("2d");
+        window.addEventListener('load', () => {
 
-           
-            ctx.fillStyle = "green";
-            ctx.fillRect(500, 500, 100, 100);
+            const ctx = this.canvas.getContext('2d');
 
-           
-            ctx.strokeStyle = "blue";
-            ctx.lineWidth = 5;
-            ctx.beginPath();
-            ctx.moveTo(200, 50);
-            ctx.lineTo(300, 150);
-            ctx.stroke();
+            // Calculate the center position of the window
+            // const centerX = window.innerWidth / 2;
+            // const centerY = window.innerHeight / 2;
 
-        
-            ctx.font = "20px Arial";
-            ctx.fillStyle = "green";
-            ctx.fillText("Hello, Canvas!", 200, 200);
-        }
+            // Set the desired size of the rectangle
+            const rectWidth = 600;
+            const rectHeight = 600;
+
+            // Calculate the top-left coordinates of the rectangle to center it
+            // const rectX = centerX - rectWidth / 2;
+            // const rectY = centerY - rectHeight / 2;
+
+            // Draw the centered rectangle on the canvas
+            ctx.fillStyle = 'green';
+            ctx.fillRect(0, 0, 800, 800);
+        });
+
+
+
+
+    }
 }
-       
-}
+
+
 
 export default Map;
