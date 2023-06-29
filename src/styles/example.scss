@@ -1,6 +1,11 @@
 $color: purple; 
 
-#main>h1 {
-    border: 4px solid $color; 
-    padding: 20px;
-}
+#main {
+  width: 100%;
+  height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+    background-image: url('https://static.vecteezy.com/system/resources/previews/022/712/737/large_2x/beach-cartoon-background-wallpaper-generat-ai-free-photo.jpg');
+};
+
