@@ -5,6 +5,7 @@ class Example {
         this.pausebutton();
         this.mutebutton()
         this.restartbutton()
+        this.side()
     }
 pausebutton(){
     window.addEventListener('load', () => {
@@ -65,6 +66,15 @@ restartbutton(){
       buttonContainer.appendChild(button);
     });
 
+}
+side(){
+  const container=this.ele
+  const side = document.createElement('div');
+  side.classList.add('side');
+  container.appendChild(side);
+  const header=document.createElement('h2')
+  header.classList.add('header')
+  
 }
 
 }

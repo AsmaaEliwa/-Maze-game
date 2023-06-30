@@ -83,10 +83,10 @@ img {
 }
 
 .game_name {
-  padding: 25px;
+  padding: 20px;
   text-align: center;
   color: yellow;
-  font-size: 80px;
+  font-size: 75px;
   font-family: "Kablammo", cursive;
   font-weight: 900;
   font-style: italic;
@@ -112,46 +112,28 @@ img {
   height: 40px;
   background-position: center;
   position: absolute;
-  top: 35%;
-  left: 85%;
+  top: 5%;
+  left: 80%;
+}
+
+.side {
+  display: none;
+  position: absolute;
+  top: 13%;
+  left: 15%;
+  background-image: url("../assets/5.jpeg");
+  border: 15px solid #ABEED7;
+  width: 70%;
+  height: 77%;
+  background-size: cover;
+  background-position: center;
+  opacity: 0.7;
+  border-radius: 30px;
+  font-family: "Kablammo", cursive;
 }
 
 #mapCanvas {
-  border: 10px solid lightblue;
-  z-index: -10;
+  border-radius: 25px;
   display: block;
   margin: auto;
-}
-
-.maze-cell {
-  width: 40px;
-  height: 40px;
-  border: 1px solid black;
-}
-
-.path {
-  position: absolute;
-  top: 20px;
-  left: 30px;
-  width: 50px;
-  height: 50px;
-  background-color: white;
-}
-
-.wall {
-  width: 50px;
-  height: 50px;
-  background-color: black;
-}
-
-.start {
-  width: 50px;
-  height: 50px;
-  background-color: green;
-}
-
-.end {
-  width: 50px;
-  height: 50px;
-  background-color: red;
 }
