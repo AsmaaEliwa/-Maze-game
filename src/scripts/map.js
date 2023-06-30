@@ -2,39 +2,77 @@ class Map {
     constructor(canvas) {
         this.canvas = canvas;
         this.createMap = this.createMap.bind(this);
+      
         this.createMap();
 
+
     }
+    createMap(){
 
-    createMap() {
-
-        window.addEventListener('load', () => {
-
+        
+        const mapcontainer = this.canvas
+        //1 => wall
+        //0=> path
+        // 3=>target 
+        //2 =>start point
+       let map = [
+            [1, 2, 1, 1, 1, 1, 1, 1, 1, 1,0,1.0,1,1],
+            [1, 0, 0, 0, 0, 0, 0, 0, 0, 3,0,1,1,0,1],
+            [1, 0, 1, 0, 1, 0, 1, 1, 0, 1,0,1,0,1,1],
+            [1, 0, 0, 0, 0, 0, 0, 0, 0, 1,0,1,0,1,1],
+            [1, 0, 1, 1, 1, 1, 1, 1, 0, 1,0,1,1,2,1],
+            [1, 0, 0, 0, 0, 0, 0, 1, 0, 1,0,1,0,1,1],
+            [1, 0, 1, 1, 1, 1, 0, 1, 0, 1,0,1,1,1,1],
+            [1, 0, 0, 0, 0, 1, 0, 0, 0, 1,0,1,0,0,1],
+            [1, 0, 0, 0, 0, 1, 0, 0, 0, 1,0,1,1,0,1],
+            [1, 0, 0, 0, 0, 1, 0, 0, 0, 1,0,1,1,1,1],
+            [1, 0, 0, 0, 0, 1, 0, 0, 0, 1,0,1,0,1,1],
+            [1, 0, 0, 0, 0, 1, 0, 0, 0, 1,0,1,1,0,1],
+            [1, 0, 0, 0, 0, 1, 0, 0, 0, 1,0,1,1,1,1],
+            [1, 1, 1, 1, 0, 1, 1, 1, 1, 1,1,0,1,1,1],
+            [1, 1, 1, 1, 1, 1, 1, 1, 1, 1,1,1,0,1,1]
+          ];
             const ctx = this.canvas.getContext('2d');
+          const cellSize=40;
+          for (let i = 0; i <= 15; i++) {
+            for (let j = 0; j < 15; j++) {
+                const cellValue = map[i][j];
 
-            // Calculate the center position of the window
-            // const centerX = window.innerWidth / 2;
-            // const centerY = window.innerHeight / 2;
+                const x = j * cellSize;
+                const y = i * cellSize;
+        
+                if (cellValue===0){
+                    ctx.fillStyle =  '#DADFE4' ;
 
-            // Set the desired size of the rectangle
-            const rectWidth = 600;
-            const rectHeight = 600;
+                }else if (cellValue===1){
+                    ctx.fillStyle =  '#B7C1C9' ;
+                }else{
+                    ctx.fillStyle =  'green' ;
+                }
 
-            // Calculate the top-left coordinates of the rectangle to center it
-            // const rectX = centerX - rectWidth / 2;
-            // const rectY = centerY - rectHeight / 2;
+                ctx.fillRect(x, y, cellSize, cellSize);
 
-            // Draw the centered rectangle on the canvas
-            ctx.fillStyle = 'green';
-            ctx.fillRect(0, 0, 800, 800);
-        });
 
+
+
+
+
+
+
+            }
+          }
+
+    }
+
+  
 
 
 
     }
-}
+
 
 
 
 export default Map;
+
+

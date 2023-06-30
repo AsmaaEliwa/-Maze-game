@@ -1,6 +1,6 @@
-$color: purple;
 
 #main {
+    position:relative;
     width: 100vw;
     height: 100vh;
     background-position: center;
@@ -9,13 +9,51 @@ $color: purple;
     background-image: url('../assets/5.jpeg');
 }
 
-.button{
-    background-image: url('https://i.https://static.vecteezy.com/system/resources/thumbnails/007/780/292/small/pause-wooden-button-in-cartoon-style-an-asset-for-a-gui-in-a-mobile-app-or-casual-video-game-vector.jpg.com/originals/99/05/5a/99055a747157a86a9a3b107577c2e459.jpg');
-    
-    width: 30px;
-    height: 30px;
+.pause-button{
+    background-image: url('../assets/2.jpg');
+    background-size: cover;
+    border-radius: 10px;
+    width: 40px;
+    height: 40px;
+    background-position: center;
+    position: absolute;
+    top: 5%;
+    left: 85%;
+    // transform: translate(-50%, -50%);
+   
 }
 img{
     width: 100%;
     height: 100%;
+}
+.game_name{
+    padding: 25px;
+    text-align: center;
+    color: yellow;
+    font-size: 80px;
+    font-family: 'Kablammo', cursive;
+    font-weight: 900;
+    font-style: italic;
+}
+.mute-button{
+    background-image: url('../assets/mute.jpg');
+    background-size: cover;
+    border-radius: 10px;
+    width: 40px;
+    height: 40px;
+    background-position: center;
+    position: absolute;
+    top: 5%;
+    left: 95%;
+}
+.restart-button{
+    background-image: url('../assets/6.png');
+    background-size: cover;
+    border-radius: 10px;
+    width: 40px;
+    height: 40px;
+    background-position: center;
+    position: absolute;
+    top: 35%;
+    left: 85%;
 }
