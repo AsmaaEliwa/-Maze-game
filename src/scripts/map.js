@@ -54,6 +54,7 @@ class Map {
                 } else if (cellValue === 1) {
                     ctx.fillStyle = '#ABEED7';
                 } else if (cellValue === 3) {
+                    // debugger
                         ctx.drawImage(this.img, this.imageX,this.imageY, cellSize, cellSize);
              
                     }
@@ -78,7 +79,7 @@ class Map {
                 }
             
                 ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
-                ctx.drawImage(this.img, this.imageX, this.imageY, 40, 40);
+                // ctx.drawImage(this.img, this.imageX, this.imageY, 40, 40);
                 this.createMap();
             }
         }
