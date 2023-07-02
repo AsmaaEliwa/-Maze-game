@@ -90,6 +90,7 @@ img {
   font-family: "Kablammo", cursive;
   font-weight: 900;
   font-style: italic;
+  cursor: pointer;
 }
 
 .mute-button {
@@ -132,7 +133,12 @@ img {
   font-family: "Kablammo", cursive;
 }
 
+h1:hover .side {
+  display: block;
+}
+
 #mapCanvas {
+  border: 10px solid lightblue;
   border-radius: 25px;
   display: block;
   margin: auto;

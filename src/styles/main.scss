@@ -34,6 +34,7 @@ img{
     font-family: 'Kablammo', cursive;
     font-weight: 900;
     font-style: italic;
+    cursor: pointer;
 }
 .mute-button{
     background-image: url('../assets/mute.jpg');
@@ -58,7 +59,7 @@ img{
     left: 80%;
 }
 .side{
-    // position: absolute;
+   
     display: none;
   position: absolute;
   top: 13%;
@@ -72,5 +73,9 @@ img{
     opacity: 0.7;
     border-radius: 30px;
     font-family: 'Kablammo', cursive;
+
+}
+h1:hover .side  {
+    display: block ;
 
 }
