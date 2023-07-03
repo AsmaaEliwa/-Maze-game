@@ -38,6 +38,12 @@ side(){
           })
           button.addEventListener('click',this.onMusic)
           buttonContainer.appendChild(button);
+          button.addEventListener('click',() =>{
+            const side=document.getElementsByClassName('side')[0];
+            // debugger
+              side.classList.add('hidden') ;
+            })
+          
         });
     
     }
