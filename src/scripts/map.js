@@ -4,12 +4,15 @@ class Map {
     this.canvas = canvas;
     this.createMap = this.createMap.bind(this);
     this.moveElement = this.moveElement.bind(this);
+
     this.img = new Image();
     this.img.src = '1.webp';
-    this.img.onload = this.handleImageLoad.bind(this);
     this.imageX = 240;
     this.imageY = 2;
     this.createMap();
+
+    this.img.onload = this.handleImageLoad.bind(this);
+   
     document.addEventListener('keydown', this.moveElement);
 
   }
@@ -96,8 +99,9 @@ class Map {
     }
 
     ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
-    ctx.drawImage(this.img, this.imageX, this.imageY, 40, 40);
     this.createMap();
+
+    ctx.drawImage(this.img, this.imageX, this.imageY, 40, 40);
   }
 }
 
