@@ -65,18 +65,22 @@ class Map {
 
         } else if (cellValue === 1) {
           ctx.fillStyle = '#ABEED7';
-        } else if (cellValue === 3) {
-          ctx.drawImage(this.img, this.imageX, this.imageY, cellSize, cellSize);
-
-        } else if (cellValue === 2) {
+        }  else if (cellValue === 2) {
 
           const img = new Image();
           img.src = 'ice-cream.jpeg'
           img.onload = function () {
             ctx.drawImage(img, x, y, cellSize, cellSize);
+          
           };
           // debugger
-        } else {
+        }else if (cellValue === 3) {
+          ctx.drawImage(this.img, this.imageX, this.imageY, cellSize, cellSize);
+          if(this.map[Math.floor(this.imageY/40)][Math.floor(this.imageX/40)]=== 2){
+            alert('yummy i love ice cream !!!!!')
+          }
+        }
+         else {
 
           const img = new Image();
           img.src = 'oldman.jpeg'
@@ -100,44 +104,42 @@ class Map {
 
     if (event.key === 'ArrowLeft') {
       this.imageX -= speed;
-        if (this.map[Math.floor(this.imageY/40)][Math.floor(this.imageX/40)]=== 0){
+        if (this.map[Math.floor(this.imageY/40)][Math.floor(this.imageX/40)]=== 0||this.map[Math.floor(this.imageY/40)][Math.floor(this.imageX/40)]=== 2){
           validMove=true
         }else{
         this.imageX += speed;
         }
     } else if (event.key === 'ArrowRight') {
       this.imageX += speed;
-        if (this.map[Math.floor(this.imageY/40)][Math.floor(this.imageX/40)]=== 0){
+        if (this.map[Math.floor(this.imageY/40)][Math.floor(this.imageX/40)]=== 0||this.map[Math.floor(this.imageY/40)][Math.floor(this.imageX/40)]=== 2){
           validMove=true
         }else{
         this.imageX -= speed;
         }
     } else if (event.key === 'ArrowUp') {
       this.imageY -= speed;
-        if (this.map[Math.floor(this.imageY/40)][Math.floor(this.imageX/40)]=== 0){
+        if (this.map[Math.floor(this.imageY/40)][Math.floor(this.imageX/40)]=== 0||this.map[Math.floor(this.imageY/40)][Math.floor(this.imageX/40)]=== 2){
           validMove=true
         }else{
         this.imageY += speed;
         }
     } else if (event.key === 'ArrowDown') {
       this.imageY += speed;
-        if (this.map[Math.floor(this.imageY/40)][Math.floor(this.imageX/40)]=== 0){
+        if (this.map[Math.floor(this.imageY/40)][Math.floor(this.imageX/40)]=== 0||this.map[Math.floor(this.imageY/40)][Math.floor(this.imageX/40)]=== 2){
           validMove=true
         }else{
         this.imageY -= speed;
         }
     }
 
-// if (this.map[Math.floor(this.imageX/40)][Math.floor(this.imageY/40)]=== 0){
-  // debugger
 if (validMove===true){
     ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
     this.createMap();
     ctx.drawImage(this.img, this.imageX, this.imageY, 40, 40);
     // requestAnimationFrame(this.moveElement);
 }
-  };
 
+  };
 
 
 
