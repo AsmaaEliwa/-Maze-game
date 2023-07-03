@@ -4,7 +4,7 @@
 <h2>Checklist<h2>
 
 <h2>Functionality & MVPs</h2>
-In {maze}, users will be able to:
+In maze game, users will be able to:
 <ul>
  <li>Start and restart the game </li>
 <li> Use the keyboards navigate through the  maze </li>

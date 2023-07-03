@@ -1,7 +1,7 @@
 #mapCanvas {
-    
-    border: 10px solid lightblue;
- 
+    box-shadow: 3px 3px 3px 3px lightcoral, -1em 0 .4em lightblue;
+    // border: 10px solid lightblue;
+ z-index: -1;
    border-radius: 25px;
     display: block;
     margin: auto;

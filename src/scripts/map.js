@@ -20,12 +20,12 @@ class Map {
       }
     createMap() {
         const mapcontainer = this.canvas
-        //1 => wall //0=> path// 3=>target //2 =>start point
+        //1 => wall //0=> path// 2=>target //3 =>start point 4=>enemy
         let map = [
             [1, 1, 1, 1, 3, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1],
-            [1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 1],
+            [1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 2, 1],
             [1, 0, 1, 1, 0, 1, 0, 1, 1, 1, 1, 1, 1, 0, 1],
-            [1, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1],
+            [1, 0, 1, 1, 0, 0, 0, 0, 0, 4, 0, 0, 0, 0, 1],
             [1, 0, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 0, 1, 1],
             [1, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1],
             [1, 1, 1, 0, 1, 0, 1, 0, 1, 1, 1, 1, 1, 0, 1],
@@ -54,9 +54,23 @@ class Map {
                 } else if (cellValue === 1) {
                     ctx.fillStyle = '#ABEED7';
                 } else if (cellValue === 3) {
-                    // debugger
                         ctx.drawImage(this.img, this.imageX,this.imageY, cellSize, cellSize);
              
+                    }else if (cellValue === 2){
+
+                     const img = new Image();
+                      img.src = 'ice-cream.jpeg'
+                      img.onload = function() {
+                        ctx.drawImage(img, x, y, cellSize, cellSize);
+                      };
+                    // debugger
+                    }else{
+
+                     const img = new Image();
+                     img.src = 'oldman.jpeg'
+                     img.onload = function() {
+                       ctx.drawImage(img, x, y, cellSize, cellSize);
+                     };
                     }
                 ctx.fillRect(x, y, cellSize, cellSize);
 
@@ -79,7 +93,7 @@ class Map {
                 }
             
                 ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
-                // ctx.drawImage(this.img, this.imageX, this.imageY, 40, 40);
+                ctx.drawImage(this.img, this.imageX, this.imageY, 40, 40);
                 this.createMap();
             }
         }

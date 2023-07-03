@@ -8,6 +8,15 @@
     background-size: cover;
     background-image: url('../assets/5.jpeg');
 }
+@keyframes example {
+    0%  {color: orange ;left:0px; top:0px;}
+    25% {color: yellow; left:200px; top:0px;}
+    50% {color: lightblue; left:200px; top:200px;}
+    75% {color: lightgreen; left:0px; top:200px;}
+    75% {color: green; left:0px; top:0px;}
+
+
+  }
 
 .pause-button{
     background-image: url('../assets/2.jpg');
@@ -30,12 +39,15 @@ img{
     padding: 20px;
     text-align: center;
     color: yellow;
-    font-size: 75px;
+    animation-name:example;
+    animation-name: example;
+    animation-duration: 30s;
+    font-size: 70px;
     font-family: 'Kablammo', cursive;
     font-weight: 800;
     font-style: italic;
     cursor: pointer;
-}
+    text-shadow: 3px 3px red, -.5em 0 .4em orange;}
 .mute-button{
     background-image: url('../assets/mute.jpg');
     background-size: cover;
@@ -60,18 +72,27 @@ img{
 }
 .side{
   position: absolute;
-  top: 13%;
+  top: 14%;
   left:15%;
   background-image: url('../assets/5.jpeg');
     border:15px solid #ABEED7 ;
     width: 70%;
-    height: 77%;
+    // height: 77%;
+    padding: 30px;
     background-size:cover;
     background-position: center;
-    opacity: 0.7;
+    // opacity: 0.7;
     border-radius: 30px;
     font-family: 'Kablammo', cursive;
-
+        color: white;
+        animation-name:example;
+        animation-name: example;
+        animation-duration: 30s;
+        font-weight: 800;
+        text-align: center;
+        font-size: 60px;
+        text-shadow: 1px 1px 2px red, 0 0 1;
+        animation-direction: reverse;
 }
 .hidden{
     display: none ;
