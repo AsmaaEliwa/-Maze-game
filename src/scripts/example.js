@@ -1,5 +1,5 @@
 import Timer from './timer'
-
+import Map from './map'
 class Example {
     constructor(ele) {
         this.ele = ele;
@@ -43,6 +43,11 @@ side(){
             // debugger
               side.classList.add('hidden') ;
             })
+            button.addEventListener('click',()=>{
+              const canvas = document.getElementById("mapCanvas");
+              new Map (canvas);
+              
+          })
           
         });
     

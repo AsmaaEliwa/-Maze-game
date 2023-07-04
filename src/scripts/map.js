@@ -6,7 +6,7 @@ class Map {
       [1, 1, 1, 1, 0, 1, 1, 1, 3, 1, 1, 1, 1, 1, 1],
       [1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 1],
       [1, 0, 1, 1, 0, 1, 0, 1, 1, 1, 1, 1, 1, 0, 1],
-      [1, 0, 1, 1, 0, 0, 0, 0, 0, 4, 0, 0, 0, 0, 1],
+      [1, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1],
       [1, 0, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 0, 1, 1],
       [1, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1],
       [1, 1, 1, 0, 1, 0, 1, 0, 1, 1, 1, 1, 1, 0, 1],
@@ -23,9 +23,6 @@ class Map {
     this.createMap = this.createMap.bind(this);
     this.moveElement = this.moveElement.bind(this);
     this.moveOldMan = this.moveOldMan.bind(this);
-
-    // this.drawTargetAndEnemy();
-
     this.img = new Image();
     this.img.src = '1.webp';
     this.imageX = 160;
@@ -52,10 +49,12 @@ class Map {
   }
 
 moveOldMan(){
-  const speed=40;
+  const speed=20;
   const ctx = this.canvas.getContext('2d');
-
-  if (this.image2X ===520 &&this.image2Y===120 ){
+  if (this.image2X ===520 &&this.image2Y===40 ){
+    alert('you lose :(')
+      }
+  else if (this.image2X ===520  ){
     setTimeout(() => {
       this.image2Y -=speed;
       this.createMap();
@@ -63,10 +62,8 @@ moveOldMan(){
       this.moveOldMan();
       ctx.drawImage(this.img, this.imageX, this.imageY, 40, 40);
     
-     ;}, 1000)
-  }else if (this.image2X ===520 &&this.image2Y===40 ){
-alert('you lose :(')
-  }else{
+     ;}, 3000)
+  } else{
     setTimeout(() => {
       this.image2X +=speed;
       this.createMap();
@@ -74,7 +71,7 @@ alert('you lose :(')
       this.moveOldMan();
       ctx.drawImage(this.img, this.imageX, this.imageY, 40, 40);
     
-     ;}, 1000)
+     ;}, 3000)
   }
 
  
@@ -98,9 +95,6 @@ alert('you lose :(')
   handleImageLoad() {
     this.createMap();
     this.drawTargetAndEnemy();
-
-    // this.moveOldMan();
-
   }
   createMap() {
     const mapcontainer = this.canvas
@@ -121,36 +115,15 @@ alert('you lose :(')
         } else if (cellValue === 1) {
           ctx.fillStyle = '#ABEED7';
         }
-        // else if (cellValue === 2) {
-        //   console.log(x, y)
-        //   const img = new Image();
-        //   img.src = 'ice-cream.jpeg'
-        //   img.onload = function () {
-        //     ctx.drawImage(img, x, y, cellSize, cellSize);
-
-        //   };
-        //   //   // debugger
-        // }
         else if (cellValue === 3) {
           // debugger;
           ctx.drawImage(this.img, this.imageX, this.imageY, cellSize, cellSize);
-          if (this.map[Math.floor(this.imageY / 40)][Math.floor(this.imageX / 40)] === 2) {
-
+          // console.log(this.imageX,this.imageY)
+          if (this.imageX ===520 &&this.imageY===40) {
             alert('yummy i love ice cream !!!!!');
             // stopTimer();
-
           }
-        }
-        // else if (cellValue === 4) {
-
-        //   const img = new Image();
-        //   img.src = 'oldman.jpeg'
-        //   img.classList.add('oldman')
-        //   console.log(x, y)
-        //   img.onload = function () {
-        //     ctx.drawImage(img, x, y, cellSize, cellSize);
-        //   };
-        // }
+         }
         ctx.fillRect(x, y, cellSize, cellSize);
 
       }
@@ -173,14 +146,14 @@ alert('you lose :(')
       }
     } else if (event.key === 'ArrowRight') {
       this.imageX += speed;
-      if ((this.map[Math.ceil(this.imageY / 40)][Math.ceil(this.imageX / 40)] === 0 || this.map[Math.ceil(this.imageY / 40)][Math.floor(this.imageX / 40)] === 2)&& !(this.imageY===Math.floor(this.image2Y)&&this.imageX===Math.floor(this.image2X))) {
+      if ((this.map[Math.ceil(this.imageY / 40)][Math.ceil(this.imageX / 40)] === 0 || this.map[Math.ceil(this.imageY / 40)][Math.ceil(this.imageX / 40)] === 2)&& !(this.imageY===Math.ceil(this.image2Y)&&this.imageX===Math.ceil(this.image2X))) {
         validMove = true
       } else {
         this.imageX -= speed;
       }
     } else if (event.key === 'ArrowUp') {
       this.imageY -= speed;
-      if ((this.map[Math.floor(this.imageY / 40)][Math.floor(this.imageX / 40)] === 0 || this.map[Math.floor(this.imageY / 40)][Math.floor(this.imageX / 40)] === 2)&& !(this.imageY===Math.floor(this.image2Y)&&this.imageX===Math.floor(this.image2X))) {
+      if ((this.map[Math.ceil(this.imageY / 40)][Math.ceil(this.imageX / 40)] === 0 || this.map[Math.ceil(this.imageY / 40)][Math.ceil(this.imageX / 40)] === 2)&& !(this.imageY===Math.ceil(this.image2Y)&&this.imageX===Math.ceil(this.image2X))) {
         validMove = true
       } else {
         this.imageY += speed;
@@ -188,7 +161,7 @@ alert('you lose :(')
     } else if (event.key === 'ArrowDown') {
       this.imageY += speed;
       // debugger
-      if ((this.map[Math.ceil(this.imageY / 40)][Math.ceil(this.imageX / 40)] === 0 || this.map[Math.ceil(this.imageY / 40)][Math.floor(this.imageX / 40)] === 2 || this.map[Math.floor(this.imageY / 40)][Math.floor(this.imageX / 40)] === 3)&& !(this.imageY===Math.floor(this.image2Y)&&this.imageX===Math.floor(this.image2X))) {
+      if ((this.map[Math.ceil(this.imageY / 40)][Math.ceil(this.imageX / 40)] === 0 || this.map[Math.ceil(this.imageY / 40)][Math.ceil(this.imageX / 40)] === 2 || this.map[Math.ceil(this.imageY / 40)][Math.ceil(this.imageX / 40)] === 3)&& !(this.imageY===Math.ceil(this.image2Y)&&this.imageX===Math.ceil(this.image2X))) {
         validMove = true
       } else {
         this.imageY -= speed;
@@ -200,10 +173,7 @@ alert('you lose :(')
       // debugger;
       this.createMap();
       this.drawTargetAndEnemy();
-
       ctx.drawImage(this.img, this.imageX, this.imageY, 40, 40);
-      // this.moveOldMan();
-
       // requestAnimationFrame(this.moveElement);
     }
 
