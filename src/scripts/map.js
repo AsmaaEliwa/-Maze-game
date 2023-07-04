@@ -1,4 +1,5 @@
-import Timer from './timer'
+import Win from './win'
+import GameOver from './gameOver'
 class Map {
   constructor(canvas) {
     this.canvas = canvas;
@@ -48,11 +49,24 @@ class Map {
 
   }
 
+
+  drawTargetAndEnemy(){
+    const ctx = this.canvas.getContext('2d');
+    ctx.drawImage(this.img1,this.image1X , this.image1Y, 40, 40);
+    ctx.drawImage(this.img2,this.image2X , this.image2Y, 40, 40);
+
+}
+
 moveOldMan(){
-  const speed=20;
+  const speed=40;
   const ctx = this.canvas.getContext('2d');
-  if (this.image2X ===520 &&this.image2Y===40 ){
-    alert('you lose :(')
+  if (Math.ceil(this.imageX )===520 &&Math.ceil(this.imageY)===40 ){
+   
+return 1
+  }
+  if (Math.ceil(this.image2X )===520 &&Math.ceil(this.image2Y)===40 ){
+const game=new GameOver();
+game.gameOver();
       }
   else if (this.image2X ===520  ){
     setTimeout(() => {
@@ -77,20 +91,6 @@ moveOldMan(){
  
 }
 
-
-  drawTargetAndEnemy(){
-    const ctx = this.canvas.getContext('2d');
-    ctx.drawImage(this.img2,this.image2X , this.image2Y, 40, 40);
-    ctx.drawImage(this.img1,this.image1X , this.image1Y, 40, 40);
-
-}
-  // startAnimation() {
-  //   this.startTime = performance.now();
-  //   this.moveElement();
-  // };
-  // stopAnimation() {
-  //   cancelAnimationFrame(this.animationFrame);
-  // };
 
   handleImageLoad() {
     this.createMap();
@@ -117,12 +117,9 @@ moveOldMan(){
         }
         else if (cellValue === 3) {
           // debugger;
+        
           ctx.drawImage(this.img, this.imageX, this.imageY, cellSize, cellSize);
-          // console.log(this.imageX,this.imageY)
-          if (this.imageX ===520 &&this.imageY===40) {
-            alert('yummy i love ice cream !!!!!');
-            // stopTimer();
-          }
+       
          }
         ctx.fillRect(x, y, cellSize, cellSize);
 
@@ -167,6 +164,7 @@ moveOldMan(){
         this.imageY -= speed;
       }
     }
+   
 
     if (validMove === true) {
       ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
@@ -175,7 +173,12 @@ moveOldMan(){
       this.drawTargetAndEnemy();
       ctx.drawImage(this.img, this.imageX, this.imageY, 40, 40);
       // requestAnimationFrame(this.moveElement);
+      if (this.imageX===520 && this.imageY===40 ){
+        const win =new Win();
+        win.gamewin();
+      }
     }
+  
 
   };
 

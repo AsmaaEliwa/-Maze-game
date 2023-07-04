@@ -1,4 +1,3 @@
-import Timer from './timer'
 import Map from './map'
 class Example {
     constructor(ele) {
@@ -33,8 +32,8 @@ side(){
           button.addEventListener('click',() =>{
           const time = document.getElementById('time');
             time.classList.add('time1')
-            const timer = new Timer();
-            timer.startTimer(); 
+            // const timer = new Timer();
+            // timer.startTimer(); 
           })
           button.addEventListener('click',this.onMusic)
           buttonContainer.appendChild(button);
@@ -114,6 +113,9 @@ restartbutton(){
     });
 
 }
+
+
+
 
 
 }
