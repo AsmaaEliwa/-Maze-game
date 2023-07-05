@@ -200,6 +200,52 @@ img {
   left: 90%;
 }
 
+.github {
+  font-size: 60px;
+  position: absolute;
+  color: white;
+  top: 3%;
+  left: 23%;
+}
+
+.linkedin {
+  font-size: 60px;
+  position: absolute;
+  color: white;
+  top: 3%;
+  left: 15%;
+}
+
+.over {
+  width: 50%;
+  height: 55%;
+  position: absolute;
+  color: red;
+  font-size: 50px;
+  background-image: url("../assets/over.jpeg");
+  text-align: center;
+  background-position: center;
+  background-size: cover;
+  top: 25%;
+  left: 25%;
+  border-radius: 50px;
+}
+
+.win {
+  width: 50%;
+  height: 55%;
+  position: absolute;
+  color: red;
+  font-size: 50px;
+  background-image: url("../assets/winjpeg");
+  text-align: center;
+  background-position: center;
+  background-size: cover;
+  top: 25%;
+  left: 25%;
+  border-radius: 50px;
+}
+
 #mapCanvas {
   box-shadow: 3px 3px 3px 3px lightcoral, -1em 0 0.4em lightblue;
   z-index: -1;

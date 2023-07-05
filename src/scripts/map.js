@@ -1,5 +1,6 @@
 import Win from './win'
 import GameOver from './gameOver'
+import Timer from './timer';
 class Map {
   constructor(canvas) {
     this.canvas = canvas;
@@ -58,38 +59,44 @@ class Map {
 }
 
 moveOldMan(){
-  const speed=40;
+  const speed = 40;
   const ctx = this.canvas.getContext('2d');
-  if (Math.ceil(this.imageX )===520 &&Math.ceil(this.imageY)===40 ){
-   
-return 1
+
+
+  if ((Math.ceil(this.image2X) === 520 && Math.ceil(this.image2Y) === 40)|| Timer.remainingSeconds ===0) {
+    const game = new GameOver();
+    game.gameOver();
+    return;
   }
-  if (Math.ceil(this.image2X )===520 &&Math.ceil(this.image2Y)===40 ){
-const game=new GameOver();
-game.gameOver();
-      }
-  else if (this.image2X ===520  ){
-    setTimeout(() => {
-      this.image2Y -=speed;
-      this.createMap();
-      this.drawTargetAndEnemy();
-      this.moveOldMan();
-      ctx.drawImage(this.img, this.imageX, this.imageY, 40, 40);
-    
-     ;}, 3000)
-  } else{
-    setTimeout(() => {
-      this.image2X +=speed;
-      this.createMap();
-      this.drawTargetAndEnemy();
-      this.moveOldMan();
-      ctx.drawImage(this.img, this.imageX, this.imageY, 40, 40);
-    
-     ;}, 3000)
+ 
+  if (this.imageX===520 && this.imageY===40 ){
+    const win =new Win();
+    win.gamewin();
+    return ;
   }
 
+  if (this.image2X === 520) {
+    setTimeout(() => {
+      this.image2Y -= speed;
+      this.createMap();
+      this.drawTargetAndEnemy();
+      ctx.drawImage(this.img, this.imageX, this.imageY, 40, 40);
+      this.moveOldMan();
+    }, 3000);
+  } else {
+    setTimeout(() => {
+      this.image2X += speed;
+      this.createMap();
+      this.drawTargetAndEnemy();
+      ctx.drawImage(this.img, this.imageX, this.imageY, 40, 40);
+      this.moveOldMan();
+    }, 3000);
+  }
  
 }
+
+ 
+
 
 
   handleImageLoad() {

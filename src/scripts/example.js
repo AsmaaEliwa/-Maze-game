@@ -1,17 +1,22 @@
+import Win from './win'
 import Map from './map'
+import Timer from './timer';
 class Example {
     constructor(ele) {
         this.ele = ele;
         this.pausebutton = this.pausebutton.bind(this); 
         this.mutebutton = this.mutebutton.bind(this); 
+        this.offMusic=this.offMusic.bind(this)
         this.play = this.play.bind(this); 
         this.pausebutton();
         this.mutebutton();
         this.restartbutton();
         this.play();
         this.side()
+        this.timer = new Timer();
         const hOne = document.getElementById("gameName");
         hOne.addEventListener('click',this.hideSide);
+
     }
 side(){
  const side= document.getElementsByClassName('side')[0];
@@ -31,9 +36,8 @@ side(){
           button.classList.add('play');
           button.addEventListener('click',() =>{
           const time = document.getElementById('time');
-            time.classList.add('time1')
-            // const timer = new Timer();
-            // timer.startTimer(); 
+            time.classList.add('time1');
+            this.timer.startTimer(); 
           })
           button.addEventListener('click',this.onMusic)
           buttonContainer.appendChild(button);
@@ -42,6 +46,11 @@ side(){
             // debugger
               side.classList.add('hidden') ;
             })
+            button.addEventListener('click',() =>{
+              const side=document.getElementsByClassName('over')[0];
+              // debugger
+                side.classList.add('hidden') ;
+              })
             button.addEventListener('click',()=>{
               const canvas = document.getElementById("mapCanvas");
               new Map (canvas);
@@ -76,7 +85,7 @@ pausebutton(){
         button.classList.add('pause-button');
 
         button.addEventListener('click', () => {
-          alert('Button clicked!');
+          this.timer.pauseTimer()
         });
 
         buttonContainer.appendChild(button);
@@ -102,17 +111,31 @@ restartbutton(){
       const button = document.createElement('button');
       button.classList.add('restart-button');
     
-      // Add event listener to the button
-      button.addEventListener('click', () => {
-        // Action to perform when the button is clicked
-        alert('restarted!');
-      });
-    
-      // Append the button to the container
-      buttonContainer.appendChild(button);
-    });
+      button.addEventListener('click',() =>{
+        const time = document.getElementById('time');
+          time.classList.add('time1')
+          const timer = new Timer();
+          timer.startTimer(); 
+        })
+        button.addEventListener('click',this.onMusic)
+        buttonContainer.appendChild(button);
+        button.addEventListener('click',() =>{
+          const side=document.getElementsByClassName('side')[0];
+          // debugger
+            side.classList.add('hidden') ;
+          })
+          button.addEventListener('click',()=>{
+            const canvas = document.getElementById("mapCanvas");
+            new Map (canvas);
 
+            
+        })
+      buttonContainer.appendChild(button);
+
+    });
+  
 }
+
 
 
 

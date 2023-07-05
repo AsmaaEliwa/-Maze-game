@@ -1,19 +1,23 @@
+// import Example from "./example";
 class GameOver{
     constructor(){
 this.gameOver=this.gameOver.bind(this);
+this.offMusic=this.offMusic.bind(this)
+
     }
 
 gameOver(){
-    const canvas= document.getElementById('mapCanvas');
-    const ctx = canvas.getContext('2d');
-    ctx.font = '100px Arial'; // Set the font size and family
-    ctx.fillStyle = 'red'; // Set the fill color
-    ctx.textAlign = 'center';
-    ctx.textBaseline = 'middle';
-    ctx.shadowColor = 'rgba(0, 0, 0, 5)';
-    ctx.fillText('Game Over!', 300, 300);
+    const main= document.getElementById('main');
+    const over=document.createElement('div')
+    over.classList.add('over')
+    main.appendChild(over)
+    this.offMusic()
+    return;
 }
-
+offMusic(){
+    const gameMusic = document.getElementById('gameMusic');
+    gameMusic.pause();
+  }
 
 
 }
