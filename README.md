@@ -2,6 +2,7 @@
 <p>in mazeGame your goal is to navigate through the  maze and reach the goal, uncovering secret passages, and evading cunning obstacles. Be prepared to encounter devious traps, and intelligent adversaries who will stop at nothing to hinder your progress. Use your wit and strategy to outsmart them and find your way to the  goal.</p>
 
 <h2>Checklist<h2>
+<a href='https://asmaaeliwa.github.io/-Maze-game/'> Try it </a>
 
 <h2>Functionality & MVPs</h2>
 In maze game, users will be able to:
