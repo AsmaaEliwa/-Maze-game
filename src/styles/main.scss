@@ -150,18 +150,17 @@ img{
 
 }
 .win{
-    display: block;
-    // object-fit: cover; 
+    
     color: lightgreen;
     width: 50%;
     height: 60%;
     position: absolute;
-    font-size: 50px;
+    font-size: 60px;
     background-image: url('../assets/nob.png');
     text-align: center;
     background-position: center;
     background-size: cover;
-    top: 25%;
+    top: 34%;
     left:25%;
     border-radius: 50px;
 
