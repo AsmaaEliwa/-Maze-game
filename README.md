@@ -51,5 +51,7 @@ In maze game, users will be able to:
 <h2>Future considerations</h2>
 <ul>
 <li>New Enemy Types</li>
+<li>use animation</li>
+
 <li> Add levels with diffrent maps and goals</li>
 </ul>
