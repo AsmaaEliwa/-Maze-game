@@ -9,7 +9,8 @@
  mazeGame can be played with keyboard controls as shown here.
 
  ![Keyboard-arrows svg](https://github.com/AsmaaEliwa/-Maze-game/assets/63536619/0b6585a1-6752-4349-811b-198d0baf52e5)
-
+<h2>Instructions  before starting the game <h2>
+ 
 <h2>Functionality & MVPs</h2>
 In maze game, users will be able to:
 <ul>
