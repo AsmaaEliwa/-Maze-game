@@ -14,7 +14,9 @@ gamewin(){
     win.classList.add('win');
     main.appendChild(win);
     this.offMusic(); 
-
+const winsound= document.createElement('audio')
+winsound.setAttribute('src','winsound.wav')
+winsound.play()
     clearInterval(this.timerId);
  
 

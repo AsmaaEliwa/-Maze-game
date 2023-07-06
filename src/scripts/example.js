@@ -179,6 +179,7 @@ resetGame() {
         new Example(main);
           main.appendChild(canvas);
         this.onMusic();
+        // this.restartbutton()
 
 
 }

@@ -13,19 +13,20 @@ gameOver(){
     over.classList.add('over')
     // over.innerText='i want my ice cream :('
     main.appendChild(over)
-    // this.offMusic()
+    this.offMusic()
+    const losesound= document.createElement('audio')
+    losesound.setAttribute('src','girlcry.mp3')
+    losesound.play()
     clearInterval(this.timerId);
 
     return;
 }
+
+
 offMusic(){
     const gameMusic = document.getElementById('gameMusic');
-    // if (!gameMusic){
-
-    }
-
-    // gameMusic.pause();
-//   }
+    gameMusic.pause();
+  }
 
 
 }
