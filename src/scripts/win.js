@@ -8,6 +8,7 @@ this.timerId=timerId;
     }
 
 gamewin(){
+    debugger;
     const main= document.getElementById('main');
     const win=document.createElement('div');
     // win.innerText="yummy :)"

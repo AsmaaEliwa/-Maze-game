@@ -111,12 +111,12 @@ restartbutton(){
   const win = document.getElementsByClassName("win")[0];
 
         if(win!=undefined){
-          debugger
+          // debugger
            win.remove('win')
           }
           const over = document.getElementsByClassName("over")[0];
           if(over!=undefined){
-            debugger
+            // debugger
   
              over.remove('over')
             }
@@ -140,12 +140,12 @@ resetGame() {
   document.removeEventListener('keydown', this.moveElementListener);
   const win = document.getElementsByClassName("win")[0];
           if(win!=undefined){
-            debugger
+            // debugger
              win.remove('win')
             }
             const over = document.getElementsByClassName("over")[0];
             if(over!=undefined){
-              debugger
+              // debugger
     
                over.remove('over')
               }

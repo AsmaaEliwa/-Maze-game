@@ -18,6 +18,7 @@ class Timer {
         if ((this.remainingSeconds === 0) ){
           this.stopTimer();
           const game = new GameOver(this.timerId);
+          debugger;
           game.gameOver();}
           return;
       }, 1000);
@@ -48,6 +49,7 @@ class Timer {
         this.timerElement.textContent = `Timer: ${this.remainingSeconds} seconds`;
         if (this.remainingSeconds === 0 && !(Map.imageX === 520 && Map.imageY === 40)) {
           this.stopTimer();
+          debugger;
           const game = new GameOver();
           game.gameOver();
         }

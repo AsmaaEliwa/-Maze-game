@@ -28,6 +28,7 @@ class Map {
     this.moveOldMan = this.moveOldMan.bind(this);
     this.img = new Image();
     this.img.src = '1.webp';
+    debugger;
     this.imageX = 160;
     this.imageY = 0;
     this.img2 = new Image();
@@ -64,13 +65,15 @@ moveOldMan(){
 
   if ((Math.ceil(this.image2X) === 520 && Math.ceil(this.image2Y) === 40)|| Timer.remainingSeconds ===0) {
     const game = new GameOver();
+    // debugger;
     game.gameOver();
     return;
   }
  
   if (this.imageX===520 && this.imageY===40 ){
-    const win =new Win(this.timerId);
-    win.gamewin();
+    // const win =new Win(this.timerId);
+    // debugger;
+    // win.gamewin();
     return ;
   }
 
@@ -165,6 +168,7 @@ moveOldMan(){
     }
 
     if (validMove === true) {
+      console.log(this.imageX, this.imageY);
       ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
       this.createMap();
       this.drawTargetAndEnemy();
@@ -172,6 +176,7 @@ moveOldMan(){
       if (this.imageX===520 && this.imageY===40 ){
         console.log()
         const win =new Win(this.timerId);
+        // debugger;
         win.gamewin();
       }
     }
