@@ -10,6 +10,7 @@
 
  ![Keyboard-arrows svg](https://github.com/AsmaaEliwa/-Maze-game/assets/63536619/0b6585a1-6752-4349-811b-198d0baf52e5)
 <h2>Instructions  before starting the game <h2>
+ <img width="1440" alt="gif" src='././assets/gif.gif'>
  
 <h2>Functionality & MVPs</h2>
 In maze game, users will be able to:
