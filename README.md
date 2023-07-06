@@ -24,12 +24,16 @@ In maze game, users will be able to:
 <h2>Wireframes</h2>
 <img width="1026" alt="Screenshot 2023-06-29 at 12 12 17 PM" src="https://github.com/AsmaaEliwa/-Maze-game/assets/63536619/03553b05-5610-44d5-9f76-967daedc9d8a">
 
+<h2>Map creation: </h2>
 
 <h2>Technologies, Libraries, APIs</h2>
 <ul>
+<li>The Canvas API to render gameplay area
+</li>
 <li>Vanilla JavaScript</li>
 <li>HTML5/ CSS3</li>
-<li>canvas</li>
+<li>npm to manage project dependencies
+</li>
 </ul>
 
 <h2>Implementation Timeline</h2>
