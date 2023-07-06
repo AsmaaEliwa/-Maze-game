@@ -38,8 +38,6 @@ class Map {
     this.img1.src = 'ice-cream.jpeg'
     this.image1X = 520;
     this.image1Y = 40;
-    // this.startTime = null;
-    // this.animationFrame = null;
     this.createMap();
     this.img1.onload = this.handleImageLoad.bind(this);
     this.img2.onload = this.handleImageLoad.bind(this);
@@ -105,30 +103,24 @@ moveOldMan(){
     this.drawTargetAndEnemy();
   }
   createMap() {
-    const mapcontainer = this.canvas
-    //1 => wall //0=> path// 2=>target //3 =>start point 4=>enemy
-
+    //1 => wall 0=> path 2=>target 3=>start point 4=>enemy
+    const mapcontainer = this.canvas;
     const ctx = this.canvas.getContext('2d');
     const cellSize = 40;
-    for (let i = 0; i < 15; i++) {
+     for (let i = 0; i < 15; i++) {
       for (let j = 0; j < 15; j++) {
         const cellValue = this.map[i][j];
-
         const x = j * cellSize;
         const y = i * cellSize;
-
-        if (cellValue === 0) {
-          ctx.fillStyle = 'white';
-
-        } else if (cellValue === 1) {
-          ctx.fillStyle = '#ABEED7';
-        }
-        else if (cellValue === 3) {
-          // debugger;
-        this.img.classList.add('girl')
-          ctx.drawImage(this.img, this.imageX, this.imageY, cellSize, cellSize);
-       
-         }
+          if (cellValue === 0) {
+            ctx.fillStyle = 'white';
+          } else if (cellValue === 1) {
+            ctx.fillStyle = '#ABEED7';
+          }
+          else if (cellValue === 3) {
+          this.img.classList.add('girl');
+            ctx.drawImage(this.img, this.imageX, this.imageY, cellSize, cellSize);
+          }
         ctx.fillRect(x, y, cellSize, cellSize);
 
       }
@@ -165,39 +157,26 @@ moveOldMan(){
       }
     } else if (event.key === 'ArrowDown') {
       this.imageY += speed;
-      // debugger
       if ((this.map[Math.ceil(this.imageY / 40)][Math.ceil(this.imageX / 40)] === 0 || this.map[Math.ceil(this.imageY / 40)][Math.ceil(this.imageX / 40)] === 2 || this.map[Math.ceil(this.imageY / 40)][Math.ceil(this.imageX / 40)] === 3)&& !(this.imageY===Math.ceil(this.image2Y)&&this.imageX===Math.ceil(this.image2X))) {
         validMove = true
       } else {
         this.imageY -= speed;
       }
     }
-   
 
     if (validMove === true) {
       ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
-      // debugger;
       this.createMap();
       this.drawTargetAndEnemy();
       ctx.drawImage(this.img, this.imageX, this.imageY, 40, 40);
       if (this.imageX===520 && this.imageY===40 ){
-        // debugger;
         console.log()
         const win =new Win(this.timerId);
         win.gamewin();
       }
     }
-  
-
   };
-
 }
-
-
-
-
-
-
 export default Map;
 
 
