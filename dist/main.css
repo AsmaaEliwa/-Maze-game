@@ -171,10 +171,6 @@ img {
   animation-direction: reverse;
 }
 
-.hidden {
-  display: none;
-}
-
 .time1 {
   margin: auto;
   padding: 10px;
@@ -217,12 +213,13 @@ img {
 }
 
 .over {
+  display: block;
   width: 50%;
-  height: 55%;
+  height: 77%;
   position: absolute;
   color: red;
   font-size: 50px;
-  background-image: url("../assets/over.jpeg");
+  background-image: url("../assets/cry.png");
   text-align: center;
   background-position: center;
   background-size: cover;
@@ -232,18 +229,23 @@ img {
 }
 
 .win {
+  display: block;
+  color: lightgreen;
   width: 50%;
-  height: 55%;
+  height: 60%;
   position: absolute;
-  color: red;
   font-size: 50px;
-  background-image: url("../assets/winjpeg");
+  background-image: url("../assets/nob.png");
   text-align: center;
   background-position: center;
   background-size: cover;
   top: 25%;
   left: 25%;
   border-radius: 50px;
+}
+
+.hidden {
+  display: none;
 }
 
 #mapCanvas {

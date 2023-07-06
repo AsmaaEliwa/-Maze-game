@@ -31,29 +31,27 @@ side(){
 
     play(){
       window.addEventListener('load', () => { 
+        // debugger
           const buttonContainer = this.ele
           const button = document.createElement('button');
           button.classList.add('play');
+          let timerId;
           button.addEventListener('click',() =>{
           const time = document.getElementById('time');
             time.classList.add('time1');
-            this.timer.startTimer(); 
+            timerId = this.timer.startTimer(); 
           })
           button.addEventListener('click',this.onMusic)
           buttonContainer.appendChild(button);
           button.addEventListener('click',() =>{
             const side=document.getElementsByClassName('side')[0];
-            // debugger
               side.classList.add('hidden') ;
             })
-            button.addEventListener('click',() =>{
-              const side=document.getElementsByClassName('over')[0];
-              // debugger
-                side.classList.add('hidden') ;
-              })
+            
+            
             button.addEventListener('click',()=>{
               const canvas = document.getElementById("mapCanvas");
-              new Map (canvas);
+              new Map (canvas, timerId);
               
           })
           
@@ -105,44 +103,73 @@ mutebutton(){
 restartbutton(){
   window.addEventListener('load', () => {
       const buttonContainer = this.ele
-
-    
-      // Create a button element
+      
       const button = document.createElement('button');
       button.classList.add('restart-button');
     
-      button.addEventListener('click',() =>{
-        const time = document.getElementById('time');
-          time.classList.add('time1')
-          const timer = new Timer();
-          timer.startTimer(); 
-        })
-        button.addEventListener('click',this.onMusic)
-        buttonContainer.appendChild(button);
-        button.addEventListener('click',() =>{
-          const side=document.getElementsByClassName('side')[0];
-          // debugger
-            side.classList.add('hidden') ;
-          })
-          button.addEventListener('click',()=>{
-            const canvas = document.getElementById("mapCanvas");
-            new Map (canvas);
+   
+        
+      button.addEventListener('click',()=>{
+        this.resetGame()
+    })
 
-            
-        })
-      buttonContainer.appendChild(button);
-
-    });
+    buttonContainer.appendChild(button);
+   
   
+})}
+
+
+
+
+resetGame() {
+  document.removeEventListener('keydown', this.moveElementListener);
+  const win = document.getElementsByClassName("win")[0];
+          if(win!=undefined){
+            // debugger
+             win.remove('win')
+            }
+            const over = document.getElementsByClassName("over")[0];
+            if(over!=undefined){
+              // debugger
+    
+               over.remove('over')
+              }
+  // Reset the game state to its initial state
+          const main = document.getElementById('main');
+          main.innerHTML = '';
+          const side= document.createElement('div')
+          side.classList.add('side')
+          const time= document.createElement('div')
+          time.classList.add('time1')
+          time.setAttribute('id','time')
+
+          const music= document.createElement('audio')
+          music.setAttribute('id', 'gameMusic')
+          music.setAttribute('src', 'music.wav')
+          const gameName= document.createElement('h1')
+          gameName.innerText='Maze Game'
+          gameName.setAttribute('id', 'gameName')
+          main.appendChild(side);
+          main.appendChild(time);
+          main.appendChild(music);
+          main.appendChild(gameName);
+          const timer = new Timer();
+        let timerId=null;
+        timerId=timer.startTimer();
+        const canvas= document.createElement('canvas');
+        canvas.setAttribute('id','mapCanvas');
+        canvas.setAttribute('width','600');
+        canvas.setAttribute('height','600');
+        new Map (canvas,timerId)
+        new Example(main);
+          main.appendChild(canvas);
+        this.onMusic();
+
+
 }
-
-
-
-
 
 
 }
 
 export default Example;
-
 

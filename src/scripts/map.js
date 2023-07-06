@@ -2,7 +2,7 @@ import Win from './win'
 import GameOver from './gameOver'
 import Timer from './timer';
 class Map {
-  constructor(canvas) {
+  constructor(canvas, timerId) {
     this.canvas = canvas;
     this.map = [
       [1, 1, 1, 1, 0, 1, 1, 1, 3, 1, 1, 1, 1, 1, 1],
@@ -22,6 +22,7 @@ class Map {
       [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
 
     ];
+    this.timerId = timerId;
     this.createMap = this.createMap.bind(this);
     this.moveElement = this.moveElement.bind(this);
     this.moveOldMan = this.moveOldMan.bind(this);
@@ -70,7 +71,7 @@ moveOldMan(){
   }
  
   if (this.imageX===520 && this.imageY===40 ){
-    const win =new Win();
+    const win =new Win(this.timerId);
     win.gamewin();
     return ;
   }
@@ -124,7 +125,7 @@ moveOldMan(){
         }
         else if (cellValue === 3) {
           // debugger;
-        
+        this.img.classList.add('girl')
           ctx.drawImage(this.img, this.imageX, this.imageY, cellSize, cellSize);
        
          }
@@ -181,7 +182,9 @@ moveOldMan(){
       ctx.drawImage(this.img, this.imageX, this.imageY, 40, 40);
       // requestAnimationFrame(this.moveElement);
       if (this.imageX===520 && this.imageY===40 ){
-        const win =new Win();
+        // debugger;
+        console.log()
+        const win =new Win(this.timerId);
         win.gamewin();
       }
     }
@@ -189,44 +192,23 @@ moveOldMan(){
 
   };
 
+// resergame(){
 
+//   const main = document.getElementById('main');
+//     main.innerHTML = '';
 
+//     // Create a new timer
+//     const timer = new Timer();
+//     timer.startTimer();
 
-  // handleAnimationFrame(event) {
-  //   const animationStartTime = performance.now();
-
-  //   function animate(timestamp) {
-  //     // Calculate elapsed time
-  //     const elapsed = timestamp - animationStartTime;
-
-  //     // Perform animation logic using the elapsed time and event
-  //     // ...
-
-  //     // Call requestAnimationFrame() to continue the animation loop
-  //     requestAnimationFrame(animate);
-  //   }
-
-  //   // Call requestAnimationFrame() for the first time to start the animation
-  //   requestAnimationFrame(animate);
-  //   requestAnimationFrame(() => moveElement(event));
-  // }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+//     // Create a new instance of the Map
+//     const map = new Map(canvas, timer.timerId);
+//   }
 }
+
+
+
+
 
 
 export default Map;

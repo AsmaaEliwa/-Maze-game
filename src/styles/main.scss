@@ -93,10 +93,7 @@ img{
         text-shadow: 1px 1px 2px red, 0 0 1;
         animation-direction: reverse;
 }
-.hidden{
-    display: none ;
 
-}
 
 .time1{
     margin: auto;
@@ -136,12 +133,14 @@ img{
     left:15%;
 }
 .over{
+    display: block;
+    // object-fit: cover; 
     width: 50%;
-    height: 55%;
+    height: 77%;
     position: absolute;
     color: red;
     font-size: 50px;
-    background-image: url('../assets/over.jpeg');
+    background-image: url('../assets/cry.png');
     text-align: center;
     background-position: center;
     background-size: cover;
@@ -151,17 +150,23 @@ img{
 
 }
 .win{
+    display: block;
+    // object-fit: cover; 
+    color: lightgreen;
     width: 50%;
-    height: 55%;
+    height: 60%;
     position: absolute;
-    color: red;
     font-size: 50px;
-    background-image: url('../assets/winjpeg');
+    background-image: url('../assets/nob.png');
     text-align: center;
     background-position: center;
     background-size: cover;
     top: 25%;
     left:25%;
     border-radius: 50px;
+
+}
+.hidden{
+    display: none ;
 
 }

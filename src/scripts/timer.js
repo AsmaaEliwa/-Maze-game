@@ -2,30 +2,30 @@ import Map from './map'
 import GameOver from './gameOver';
 class Timer {
     constructor() {
-      this.remainingSeconds = 10;
-      this.timerElement = document.getElementById('time');
+      this.remainingSeconds = 15;
+      this.timerElement = document.getElementById('time')
       this.timerId = null;
+     
+    
     }
   
     startTimer() {
       this.timerId = setInterval(() => {
         this.remainingSeconds--;
-        this.timerElement.textContent = `Timer: ${this.remainingSeconds} seconds`;
-        if (this.remainingSeconds === 0 && !(Map.imageX ===520 && Map.imageY===40)) {
-          this.stopTimer();
-          const game = new GameOver();
-          game.gameOver();
+        // debugger
 
-        }
+        this.timerElement.textContent = `Timer: ${this.remainingSeconds} seconds`;
+        if ((this.remainingSeconds === 0) ){
+          this.stopTimer();
+          const game = new GameOver(this.timerId);
+          game.gameOver();}
+          return;
       }, 1000);
+      return this.timerId;
     }
-  
     stopTimer() {
       clearInterval(this.timerId);
     }
-
-
-
     pauseTimer() {
       if (this.paused) {
         return; // Timer is already paused
@@ -54,9 +54,7 @@ class Timer {
       }, 1000);
     }
   
-    stopTimer() {
-      clearInterval(this.timerId);
-    }
+  
   }
  
   
