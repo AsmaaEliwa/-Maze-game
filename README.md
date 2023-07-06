@@ -25,6 +25,8 @@ In maze game, users will be able to:
 <img width="1026" alt="Screenshot 2023-06-29 at 12 12 17 PM" src="https://github.com/AsmaaEliwa/-Maze-game/assets/63536619/03553b05-5610-44d5-9f76-967daedc9d8a">
 
 <h2>Map creation: </h2>
+<img width="775" alt="Screenshot 2023-07-06 at 10 31 31 AM" src="https://github.com/AsmaaEliwa/-Maze-game/assets/63536619/bcb510a7-4760-4939-83f1-dc085e87570a">
+<img width="775" alt="Screenshot 2023-07-06 at 10 36 02 AM" src="https://github.com/AsmaaEliwa/-Maze-game/assets/63536619/a9a82672-f650-4f9f-8458-138f1751cb88">
 
 <h2>Technologies, Libraries, APIs</h2>
 <ul>
