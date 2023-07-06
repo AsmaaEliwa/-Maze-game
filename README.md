@@ -7,10 +7,9 @@
 <a href='https://asmaaeliwa.github.io/-Maze-game/'> Try it </a>
 <h2> Controls</h2>
  mazeGame can be played with keyboard controls as shown here.
-![Keyboard-arrows svg](https://github.com/AsmaaEliwa/-Maze-game/assets/63536619/142e2de6-3711-460f-b797-62cbd9070ded)
 
+ ![Keyboard-arrows svg](https://github.com/AsmaaEliwa/-Maze-game/assets/63536619/0b6585a1-6752-4349-811b-198d0baf52e5)
 
- 
 <h2>Functionality & MVPs</h2>
 In maze game, users will be able to:
 <ul>
