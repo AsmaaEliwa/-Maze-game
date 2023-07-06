@@ -65,14 +65,14 @@ moveOldMan(){
 
 
   if ((Math.ceil(this.image2X) === 520 && Math.ceil(this.image2Y) === 40)|| Timer.remainingSeconds ===0) {
-    const game = new GameOver();
-    game.gameOver();
+    // const game = new GameOver();
+    // game.gameOver();
     return;
   }
  
   if (this.imageX===520 && this.imageY===40 ){
-    const win =new Win(this.timerId);
-    win.gamewin();
+    // const win =new Win(this.timerId);
+    // win.gamewin();
     return ;
   }
 
@@ -180,7 +180,6 @@ moveOldMan(){
       this.createMap();
       this.drawTargetAndEnemy();
       ctx.drawImage(this.img, this.imageX, this.imageY, 40, 40);
-      // requestAnimationFrame(this.moveElement);
       if (this.imageX===520 && this.imageY===40 ){
         // debugger;
         console.log()
@@ -192,18 +191,6 @@ moveOldMan(){
 
   };
 
-// resergame(){
-
-//   const main = document.getElementById('main');
-//     main.innerHTML = '';
-
-//     // Create a new timer
-//     const timer = new Timer();
-//     timer.startTimer();
-
-//     // Create a new instance of the Map
-//     const map = new Map(canvas, timer.timerId);
-//   }
 }
 
 
