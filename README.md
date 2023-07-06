@@ -1,5 +1,5 @@
 <h2>Background</h2>
-<p>in mazeGame your goal is to navigate through the  maze and reach the goal, uncovering secret passages, and evading cunning obstacles. Be prepared to encounter devious traps, and intelligent adversaries who will stop at nothing to hinder your progress. Use your wit and strategy to outsmart them and find your way to the  goal.</p>
+<p> mazeGame  is a 2D game your goal is to navigate through the  maze and reach the goal, uncovering secret passages, and evading cunning obstacles. Be prepared to encounter devious traps, and intelligent adversaries who will stop at nothing to hinder your progress. Use your wit and strategy to outsmart them and find your way to the  goal before the time is up.</p>
 
 <img width="1440" alt="sc" src="https://github.com/AsmaaEliwa/-Maze-game/assets/63536619/185c6b07-0246-462b-a447-e2b8e8f94726">
 
