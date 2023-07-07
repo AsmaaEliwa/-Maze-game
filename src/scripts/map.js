@@ -64,9 +64,13 @@ moveOldMan(){
 
 
   if ((Math.ceil(this.image2X) === 520 && Math.ceil(this.image2Y) === 40)|| Timer.remainingSeconds ===0) {
-    const game = new GameOver();
-    // debugger;
-    game.gameOver();
+    // const gameover= document.getElementsByClassName('over')[0]
+    // if (gameover!=undefined){
+    //   gameover.remove();
+    // }
+    // const game = new GameOver();
+    // // debugger;
+    // game.gameOver();
     return;
   }
  
